@@ -203,6 +203,16 @@ public class BillingInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+	private void quantityTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quantityTxtKeyReleased
+        
+        double price = Double.parseDouble(priceTxt.getText());
+        double quantity = Double.parseDouble(quantityTxt.getText());
+        
+        double result = price * quantity;
+        
+        totalTxt.setText(String.valueOf(result));
+        
+    }//GEN-LAST:event_quantityTxtKeyReleased
    
 
     /**
