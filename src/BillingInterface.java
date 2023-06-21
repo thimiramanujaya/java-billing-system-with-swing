@@ -213,6 +213,30 @@ public class BillingInterface extends javax.swing.JFrame {
         totalTxt.setText(String.valueOf(result));
         
     }//GEN-LAST:event_quantityTxtKeyReleased
+	
+	
+	private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        
+        String item = String.valueOf(itemBox.getSelectedItem());
+        String price = priceTxt.getText();
+        String quantity = quantityTxt.getText();
+        String total = totalTxt.getText();
+        
+        DefaultTableModel dtm = (DefaultTableModel)billingTable.getModel();
+        
+        dtm.insertRow(billingTable.getRowCount(), new Object[] {item, price, quantity, total});
+        
+        double total_ = Double.parseDouble(totalTxt.getText());
+        double fullTot = Double.parseDouble(fullTotTxt.getText());
+        
+        double result = total_ + fullTot;
+        fullTotTxt.setText(String.valueOf(result));
+        
+        priceTxt.setText(null);
+        quantityTxt.setText(null);
+        totalTxt.setText("0");
+        
+    }//GEN-LAST:event_addBtnActionPerformed
    
 
     /**
