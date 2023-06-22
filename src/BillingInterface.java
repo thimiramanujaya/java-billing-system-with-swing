@@ -237,6 +237,24 @@ public class BillingInterface extends javax.swing.JFrame {
         totalTxt.setText("0");
         
     }//GEN-LAST:event_addBtnActionPerformed
+	
+	
+	private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
+        
+        DefaultTableModel dtm = (DefaultTableModel)billingTable.getModel();
+        int row = billingTable.getSelectedRow();
+        
+        String value = String.valueOf(billingTable.getValueAt(row, 3));
+        double total_ = Double.parseDouble(value);
+        
+        double fullTot_ = Double.parseDouble(fullTotTxt.getText());
+        
+        double newResult = fullTot_ - total_;
+        fullTotTxt.setText(String.valueOf(newResult));
+        
+        dtm.removeRow(row);
+        
+    }//GEN-LAST:event_removeBtnActionPerformed
    
 
     /**
